@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="~{/component/head.html::head-user}"></head>
+
+<body>
+	<!-- Start Header/Navigation -->
+	<header th:replace="~{/component/header.html::navbar-user}"></header>
+	<!-- End Header/Navigation -->
+	<div class="body-cart container my-4">
+		<div class="row">
+			<div class="col-3 bg-white rounded-1">
+				<div th:replace="~{/component/side-profile.html::profile-user}"></div>
+			</div>
+			<div class="col-9 tabs-status">
+				<nav>
+					<div class="nav nav-underline gap-0 border-bottom-0 bg-white rounded-1" id="nav-tab" role="tablist">
+						<a class="nav-link px-5 py-2 mt-2 active" id="nav-home-tab" data-bs-toggle="tab" href="#all"
+							role="tab" aria-controls="nav-home" aria-selected="true">Tất cả</a>
+						<a class="nav-link px-5 py-2 mt-2 text-black" id="nav-profile-tab" data-bs-toggle="tab"
+							href="#dangcho" role="tab" aria-controls="nav-profile" aria-selected="false">Chờ xác
+							nhận</a>
+						<a class="nav-link px-5 py-2 mt-2 text-black" id="nav-profile-tab" data-bs-toggle="tab"
+							href="#daxacnhan" role="tab" aria-controls="nav-profile" aria-selected="false">Đã xác
+							nhận</a>
+						<a class="nav-link px-5 py-2 mt-2 text-black" id="nav-profile-tab" data-bs-toggle="tab"
+							href="#hoanthanh" role="tab" aria-controls="nav-profile" aria-selected="false">Hoàn
+							thành</a>
+						<a class="nav-link px-5 py-2 mt-2 text-black" id="nav-profile-tab" data-bs-toggle="tab"
+							href="#dahuy" role="tab" aria-controls="nav-profile" aria-selected="false">Đã hủy</a>
+					</div>
+				</nav>
+
+				<div class="tab-content bg-white mt-3 rounded-1">
+					<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class="mb-3 pt-4">
+							<div class="row g-0 border-bottom">
+								<div class="col-md-4 purchase-card  pb-2">
+									<img src="assets/images/products/1.png" class="w-00" alt="Card title"
+										style="max-width: 7rem;" />
+								</div>
+								<div class="col-md-8 my-auto pb-2 ps-3">
+									<div class="card-body">
+										<span class="card-text">
+											This is a wider card with supporting text below as a
+											natural lead-in to additional content. This content is a
+											little bit longer.
+										</span><br>
+										<span class="quan fw-bold">
+											x1
+										</span><br>
+										<del><span class="old">
+												100.000đ
+											</span></del>
+										<span class="ms-2 text-danger fw-bold new">
+											200.000đ
+										</span><br>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3 pb-3">
+								<div class="col-6 text-start ps-5">
+									<span class="fs-6 text-success">
+										Đã mua</span>
+								</div>
+								<div class="col-6 text-end">
+									<span class="fs-6 fw-bold">Thành tiền:
+										<span class="fs-5 fw-bold text-danger pe-3">100.000đ</span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="dangcho" role="tabpanel" aria-labelledby="nav-home-tab">
+						mk
+					</div>
+					<div class="tab-pane fade " id="daxacnhan" role="tabpanel" aria-labelledby="nav-home-tab">
+						daxacnhan
+					</div>
+					<div class="tab-pane fade " id="hoanthanh" role="tabpanel" aria-labelledby="nav-home-tab">
+						haong thanh
+					</div>
+					<div class="tab-pane fade " id="dahuy" role="tabpanel" aria-labelledby="nav-home-tab">
+						huy
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="body-chat">
+		<div id="chat-circle" class="btn btn-raised">
+			<div id="chat-overlay"></div>
+			<i class="fa-brands fa-rocketchat"></i>
+		</div>
+
+		<div class="chat-box">
+			<div class="chat-box-header">
+				Chat với nhân viên
+				<span class="chat-box-toggle"><i class="fa-solid fa-x"></i></span>
+			</div>
+			<div class="chat-box-body">
+				<div class="chat-box-overlay">
+				</div>
+				<div class="chat-logs">
+
+				</div><!--chat-log -->
+			</div>
+			<div class="chat-input">
+				<form>
+					<input type="text" id="chat-input" placeholder="Nội dung tin nhắn..." />
+					<button type="submit" class="chat-submit" id="chat-submit">Gửi</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<span onclick="topFunction()" id="myBtn" title="Go to top">
+		<span class="bg-favorite shadow-sm ">&#129129;</span>
+	</span>
+	<!-- Start Footer Section -->
+	<footer th:replace="~{/component/footer.html::footer-user}"></footer>
+	<!-- End Footer Section -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+</body>
+
+</html>
