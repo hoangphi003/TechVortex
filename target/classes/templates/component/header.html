@@ -26,19 +26,37 @@
                         </button>
                     </div>
                 </div>
+
                 <div id="navbarsFurni">
                     <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-2">
-                        <div class="dropdonwn">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                <i class="fa-regular fa-user text-black fs-5 "></i></a>
+                        <li><a class="nav-link" href="/favorite">
+                                <i class="fa-regular fa-heart text-black fs-5"></i>
+                            </a></li>
+                        <div th:unless="${#request.remoteUser}">
+                            <div class="dropdonwn">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <i class="fa-regular fa-user text-black fs-5"></i></a>
+                                <ul class="dropdown-menu acc">
+                                    <li><a class="dropdown-item" href="/login">Đăng nhập</a></li>
+                                    <li><a class="dropdown-item" href="/register">Đăng ký</a></li>
+                                    <li><a class="dropdown-item forget-pass" href="/forgetpassword">Quên mật
+                                            khẩu</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div th:if="${#request.remoteUser}">
 
-                            <ul class="dropdown-menu acc">
-                                <li><a class="dropdown-item" href="profile">Tài khoản</a></li>
-                                <li><a class="dropdown-item" href="purchase">Đơn mua</a></li>
-                                <li><a class="dropdown-item forget-pass" data-bs-toggle="modal"
-                                        data-bs-target="#forgetpassword">Quên mật
-                                        khẩu</a></li>
-                            </ul>
+                            <div class="dropdonwn">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <i class="fa-regular fa-user-circle text-black fs-4 "></i></a>
+
+                                <ul class="dropdown-menu acc">
+                                    <li><a class="dropdown-item" href="profile">Tài khoản</a></li>
+                                    <li><a class="dropdown-item" href="purchase">Đơn mua</a></li>
+                                    <li><a class="dropdown-item forget-pass" href="/changepassword">Đổi mật
+                                            khẩu</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <li><a class="nav-link" href="cart">
                                 <i class="fa-solid fa-cart-shopping position-relative text-black fs-5"></i>
@@ -46,11 +64,12 @@
                             </a></li>
                     </ul>
                 </div>
+
             </div>
         </nav>
 
         <!-- Start forget password -->
-        <div class="modal fade" tabindex="-1" id="forgetpassword">
+        <!-- <div class="modal fade" tabindex="-1" id="forgetpassword">
             <div class="modal-dialog modal-dialog-centered modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -72,7 +91,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- End forget password -->
 
         <div class="menu-nd bg-white">
@@ -98,8 +117,13 @@
                                 <a class="nav-link" href="products"><i class="fa-brands fa-shopify me-2"></i>Sản
                                     phẩm</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa-regular fa-registered me-2"></i>Đăng ký</a>
+                            <li class="nav-item" th:unless="${#request.remoteUser}">
+                                <a class="nav-link" href="/register"><i class="fa-regular fa-registered me-2"></i>Đăng
+                                    ký</a>
+                            </li>
+                            <li class="nav-item" th:if="${#request.remoteUser}">
+                                <a class="nav-link" href="/user/logout"><i
+                                        class="fa-solid fa-arrow-right-from-bracket me-2"></i>Đăng xuất</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fa-solid fa-bolt me-2"></i></i>Giảm giá</a>
