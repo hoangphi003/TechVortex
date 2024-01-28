@@ -6,23 +6,27 @@ import java.util.List;
 
 import org.hibernate.annotations.Nationalized;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Table(name = "Account")
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Account implements Serializable {
     @Id
     @Nationalized
@@ -33,14 +37,15 @@ public class Account implements Serializable {
 
     private String Password;
 
-    private Integer Phone;
+    // Dùng kiểu String để lưu được số 0
+    private String Phone;
 
     private String Email;
 
     private Boolean Active;
 
     @Temporal(TemporalType.DATE)
-    private Date Birth = new Date();
+    private Date Birth;
 
     private Boolean Gender;
 
@@ -49,7 +54,7 @@ public class Account implements Serializable {
     @OneToMany(mappedBy = "account")
     List<Cart> carts;
 
-    @OneToMany(mappedBy = "account")
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
     List<Authority> authorities;
 
     @OneToOne(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
