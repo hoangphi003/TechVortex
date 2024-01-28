@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="~{/component/head.html::head-user}"></head>
+
+<body>
+	<!-- Start Header/Navigation -->
+	<header th:replace="~{/component/header.html::navbar-user}"></header>
+	<!-- End Header/Navigation -->
+	<div class="body-cart container my-4">
+		<div class="row">
+			<div class="col-3 bg-white rounded-1">
+				<div th:replace="~{/component/side-profile.html::profile-user}"></div>
+			</div>
+			<div class="col-9 ">
+				<div class="row bg-white ms-3 rounded-1">
+					<div class="col-6 border-end py-3 ps-4  border-bottom">
+						<span class="fs-5">Thông tin cá nhân</span>
+						<div class="row">
+							<div class="col-12 ">
+								<div class="row">
+									<div class="row mt-4">
+										<div class="col-4 my-auto">Họ & tên</div>
+										<div class="col-8">
+											<input type="text" class="form-control" name="" id="">
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-4">Giới tính</div>
+										<div class="col-8 ">
+											<div class="form-check form-check-inline wins">
+												<input class="form-check-input" type="radio" name="" id=""
+													value="{3:option1}" />
+												<label class="form-check-label" for="">Nam</label>
+											</div>
+											<div class="form-check form-check-inline wins">
+												<input class="form-check-input" type="radio" name="" id=""
+													value="option2" />
+												<label class="form-check-label" for="">Nữ</label>
+											</div>
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-4">Ngày sinh</div>
+										<div class="col-8">
+											<div class="row my-birth">
+												<div class="col-3 shit">
+													<select class="form-select shaw" name="" id="">
+														<option selected>12</option>
+													</select>
+												</div>
+												<div class="col-4">
+													<select class="form-select" name="" id="">
+														<option selected>12</option>
+													</select>
+												</div>
+												<div class="col-4">
+													<select class=" form-select" name="" id="">
+														<option selected>2023</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-4 my-auto">Email</div>
+										<div class="col-8">
+											<input type="text" class="form-control" name="" id="">
+										</div>
+									</div>
+									<div class="row mt-4">
+										<div class="col-4 my-auto">Mật khẩu</div>
+										<div class="col-8">
+											<a href="doimatkhau"> <span
+													class="card w-50 text-center rounded-5 change-pass py-1">Cập
+													nhật</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 text-center avatar-img  border-bottom">
+						<img src="assets/images/others/person_3.jpg" alt="" class="w-25 rounded-pill">
+						<a href=""><span class="card w-25 mt-4 mx-auto text-center rounded-4">Đổi ảnh</span></a>
+					</div>
+					<div class="text-center my-4">
+						<button class="btn btn-primary">Lưu thay đổi</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<span onclick="topFunction()" id="myBtn" title="Go to top">
+		<span class="bg-favorite shadow-sm ">&#129129;</span>
+	</span>
+	<!-- Start Footer Section -->
+	<footer th:replace="~{/component/footer.html::footer-user}"></footer>
+	<!-- End Footer Section -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="/assets/js/chatbox.js"></script>
+
+</body>
+
+</html>

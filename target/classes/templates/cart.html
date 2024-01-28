@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{/component/head.html::head-user}"></head>
+
+<body>
+	<!-- Start Header/Navigation -->
+	<header th:replace="~{/component/header.html::navbar-user}"></header>
+	<!-- End Header/Navigation -->
+	<div class="body-cart container my-4">
+		<div class="row">
+			<div class="col-12 bg-white rounded-1">
+				<div class="row p-2 ps-4 ">
+					<div class="col-4">
+						<div class="form-check">
+							<input class="form-check-input focus-form" type="checkbox" value="" id="defaultCheck1">
+							<label class="form-check-label  ps-2" for="defaultCheck1">
+								Sản phẩm
+							</label>
+						</div>
+					</div>
+					<div class="col-2 text-center">
+						<span class="form-check-label  ps-2" for="defaultCheck1">
+							Đơn giá
+						</span>
+					</div>
+					<div class="col-2 text-center">
+						<span class="form-check-label   ps-2" for="defaultCheck1">
+							Số lượng
+						</span>
+					</div>
+					<div class="col-2 text-center">
+						<span class="form-check-label   ps-2" for="defaultCheck1">
+							Số tiền
+						</span>
+					</div>
+					<div class="col-2 text-center">
+						<span class="form-check-label ps-2" for="defaultCheck1">
+							Thao tác
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-12 bg-white rounded-1">
+				<div class="row p-4 ps-4">
+					<div class="col-4 my-auto">
+						<div class="mb-3">
+							<div class="row g-0">
+								<input class="form-check-input  my-auto focus-form" type="checkbox" value=""
+									id="defaultCheck1">
+								<div class="col-md-3  my-auto ">
+									<img src="assets/images/products/1.png" class="img-fluid rounded-start"
+										alt="Card title" />
+								</div>
+								<div class="col-md-8  my-auto ">
+									<div class="card-body">
+										<p class="card-text">
+											This is a wider card with supporting text below as a
+											natural lead-in to additional content. This content is a
+											little bit longer.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-2 text-center my-auto">
+						<span class="form-check-label  ps-2" for="defaultCheck1">
+							<del><span class="old-price">100.000đ</span></del>
+							<span class="old-price fw-bold text-danger">100.000đ</span>
+						</span>
+					</div>
+					<div class="col-2 text-center my-auto">
+						<div class="xml">
+							<input type="number" value="1" class="rounded-2 ps-2" min="1" />
+						</div>
+					</div>
+					<div class="col-2 text-center my-auto">
+						<span class="form-check-label   ps-2" for="defaultCheck1">
+							<span class="amout fw-bold text-danger">100.000đ</span>
+						</span>
+					</div>
+					<div class="col-2 text-center my-auto">
+						<span class="form-check-label ps-2" for="defaultCheck1">
+							Xóa
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3" id="bill">
+			<div class="col-12 bg-white rounded-1 shadow-lg  bg-secondary ">
+				<div class="row pt-3 ps-4 text-end">
+					<div class="col-12">
+						<div class="ops">
+							<input type="text" class="form-dis" placeholder="Mã giảm giá">
+							<button class="ms-2 text-white ">Áp dụng</button>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="row p-4 ps-4">
+					<div class="col-4 my-auto">
+						<input class="form-check-input focus-form" type="checkbox" value="" id="defaultCheck1">
+						<span class="ps-3 fs-6 fw-bold">
+							Chọn tất cả (2)
+						</span>
+					</div>
+					<div class="col-8 my-auto text-end">
+						<span class="fs-6 fw-bold">Tổng thanh toán</span>
+						<span class="fs-6 fw-bold">(0 sản phẩm): </span>
+						<span class="fs-6 fw-bold text-danger">100.000 đ</span>
+						<a name="" id="" class="btn btn-primary ms-2" href="/checkout" role="button">Mua hàng</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row p-3 bg-white rounded mt-4">
+			<h5>Có thể bạn cũng thích</h5>
+			<div class="card-group text-center mt-2">
+				<div class="card">
+					<img src="assets/images/products/2.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Kruzari Max Rolex 2</h5>
+						<del>
+							<span class="price">100.000đ</span>
+						</del><br>
+						<span class="price-new fw-bold fs-5">100.000đ</span>
+						<div class="review">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="rating">11</span>
+						</div>
+						<p class="card-text"><a href="">Xem thêm</a></p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="assets/images/products/2.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Kruzari Max Rolex 2</h5>
+						<p class="card-text">This is a wider card with supporting text below as a
+							natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><a href="">Xem thêm</a></p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="assets/images/products/2.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Kruzari Max Rolex 2</h5>
+						<p class="card-text">This is a wider card with supporting text below as a
+							natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><a href="">Xem thêm</a></p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="assets/images/products/2.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Kruzari Max Rolex 2</h5>
+						<p class="card-text">This is a wider card with supporting text below as a
+							natural lead-in to
+							additional content. This content is a little bit longer.</p>
+						<p class="card-text"><a href="">Xem thêm</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Start Footer Section -->
+	<footer th:replace="~{/component/footer.html::footer-user}"></footer>
+	<!-- End Footer Section -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/scroll-cart.js"></script>
+	<script src="/assets/js/chatbox.js"></script>
+</body>
+
+</html>
