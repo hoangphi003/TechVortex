@@ -22,7 +22,6 @@ public class LoginController {
 
     @GetMapping("/login/success")
     public String SuccessLogin(Model model) {
-
         model.addAttribute("messageSuccess", "bạn đã đăng nhập thành công");
         return "login";
     }

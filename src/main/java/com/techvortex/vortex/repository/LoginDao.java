@@ -8,8 +8,4 @@ import com.techvortex.vortex.entity.Account;
 import java.util.List;
 
 public interface LoginDao extends JpaRepository<Account, String> {
-
-    @Query("select a from Account a where a.UserName = :name")
-    Account isFindUserNameById(@Param("name") String username);
-
 }

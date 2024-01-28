@@ -2,6 +2,7 @@ package com.techvortex.vortex.serviceimplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.techvortex.vortex.entity.Account;
 import com.techvortex.vortex.repository.LoginDao;
@@ -13,8 +14,9 @@ public class LoginServiceImp implements LoginService {
     LoginDao loginDao;
 
     @Override
-    public Account findById(String username) {
-        return loginDao.isFindUserNameById(username);
+    @Transactional
+    public Account findById(String UserName) {
+        return loginDao.findById(UserName).get();
     }
 
 }

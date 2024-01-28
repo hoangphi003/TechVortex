@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 public class Role implements Serializable {
     @Id
-    private Integer RoleId;
+    private String RoleId;
 
     @Nationalized
     private String RoleName;

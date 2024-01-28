@@ -44,9 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     BCryptPasswordEncoder pe;
 
-    @Autowired
-    HttpServletRequest request;
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(username -> {
@@ -74,7 +71,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated().antMatchers("/changepassword")
                 .authenticated().antMatchers("/profile")
                 .authenticated().antMatchers("/favorite")
-                .authenticated().antMatchers("/forgetpassword")
                 .authenticated().antMatchers("/admin/**")
                 .hasAnyRole("staff", "admin").anyRequest().permitAll();
 

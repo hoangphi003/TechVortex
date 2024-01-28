@@ -1,8 +1,12 @@
 package com.techvortex.vortex.serviceimplement;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import com.techvortex.vortex.entity.Account;
@@ -10,6 +14,7 @@ import com.techvortex.vortex.entity.Authority;
 import com.techvortex.vortex.entity.Role;
 import com.techvortex.vortex.repository.AuthorityDao;
 import com.techvortex.vortex.repository.RegisterDao;
+import com.techvortex.vortex.repository.RoleDao;
 import com.techvortex.vortex.service.RegisterService;
 
 @Service
@@ -19,17 +24,27 @@ public class RegisterServiceImp implements RegisterService {
     RegisterDao registerDao;
 
     @Autowired
+    RoleDao roleDao;
+
+    @Autowired
     AuthorityDao authorityDao;
 
     @Override
     public void save(Account account) {
-        Authority authority = new Authority();
-        Role role = new Role();
-        role.setRoleId(1);
         account.setActive(true);
-        authority.setAccount(account);
-        authority.setRole(role);
         registerDao.save(account);
+
+       Role role = roleDao.findByRoleId("Customer");
+
+        if (role == null) {
+            role = new Role();
+            role.setRoleId("Customer");
+        }
+
+        Authority authority = new Authority();
+        authority.setRole(role);
+        authority.setAccount(account);
+
         authorityDao.save(authority);
     }
 
