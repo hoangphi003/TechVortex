@@ -1,14 +1,20 @@
 package com.techvortex.vortex.accountmanager;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.techvortex.vortex.configuration.SecurityConfig;
 import com.techvortex.vortex.entity.Account;
 
 @Controller
 public class LoginController {
+
+    @Autowired
+    SecurityConfig config;
 
     @GetMapping("/login")
     public String HomeLogin(Account account) {
@@ -21,7 +27,8 @@ public class LoginController {
     }
 
     @GetMapping("/login/success")
-    public String SuccessLogin(Model model) {
+    public String SuccessLogin(OAuth2AuthenticationToken oauth2, Model model) {
+        config.LoginFormOAuth2(oauth2);
         model.addAttribute("messageSuccess", "bạn đã đăng nhập thành công");
         return "login";
     }

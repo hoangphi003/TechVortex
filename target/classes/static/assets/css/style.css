@@ -1025,3 +1025,8 @@ button.btn-private-new {
 #success-alert {
   margin-left: 4.5rem;
 }
+
+a.svg-gg:active,
+a.svg-fb:active {
+  background-color: #3b5d50 !important;
+}
