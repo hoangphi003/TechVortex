@@ -5,19 +5,20 @@ import java.util.Date;
 import java.util.List;
 
 import org.hibernate.annotations.Nationalized;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.Data;
 
 @Data
@@ -40,6 +41,7 @@ public class Account implements Serializable {
     private Boolean Active;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date Birth = new Date();
 
     private Boolean Gender;
@@ -57,4 +59,11 @@ public class Account implements Serializable {
 
     @OneToMany(mappedBy = "account")
     List<Order> orders;
+
+    public void addAttribute(String string, List<Account> findAll) {
+    }
+
+    public Account orElseThrow(Object object) {
+        return null;
+    }
 }

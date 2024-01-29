@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Form Account</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/libs/css/style.css">
-    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" th:href=@{/assets/vendor/bootstrap/css/bootstrap.min.css}>
+    <link th:href=@{/assets/vendor/fonts/circular-std/style.css} rel="stylesheet">
+    <link rel="stylesheet" th:href=@{/assets/libs/css/style.css}>
+    <link rel="stylesheet" th:href=@{/assets/vendor/fonts/fontawesome/css/fontawesome-all.css}>
 
     <!-- table -->
   
-    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/buttons.bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/select.bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/dataTables.bootstrap4.css}>
+    <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/buttons.bootstrap4.css}>
+    <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/select.bootstrap4.css}>
+    <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/fixedHeader.bootstrap4.css}>
     <!-- table -->
     <style>
         td {
@@ -64,7 +64,7 @@
                                         <div class="list-group">
                                             <a href="#" class="list-group-item list-group-item-action active">
                                                 <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-img"><img th:src=@{/assets/images/avatar-2.jpg} alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
@@ -72,7 +72,7 @@
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-img"><img th:src=@{/assets/images/avatar-3.jpg} alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">
 John Abraham</span>is now following you
                                                         <div class="notification-date">2 days ago</div>
@@ -81,7 +81,7 @@ John Abraham</span>is now following you
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-img"><img th:src=@{/assets/images/avatar-4.jpg} alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
@@ -89,7 +89,7 @@ John Abraham</span>is now following you
                                             </a>
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-img"><img th:src=@{/assets/images/avatar-5.jpg} alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
@@ -109,24 +109,24 @@ John Abraham</span>is now following you
                                 <li class="connection-list">
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/github.png" alt="" > <span>Github</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/github.png} alt="" > <span>Github</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/dribbble.png" alt="" > <span>Dribbble</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/dribbble.png} alt="" > <span>Dribbble</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/dropbox.png} alt="" > <span>Dropbox</span></a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/bitbucket.png} alt=""> <span>Bitbucket</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/mail_chimp.png} alt="" ><span>Mail chimp</span></a>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="../assets/images/slack.png" alt="" > <span>Slack</span></a>
+                                            <a href="#" class="connection-item"><img th:src=@{/assets/images/slack.png} alt="" > <span>Slack</span></a>
                                         </div>
                                     </div>
                                 </li>
@@ -290,7 +290,7 @@ John Abraham</span>is now following you
                             <div class="card">
                                 <h5 class="card-header">Tài khoản</h5>
                                 <div class="card-body">
-                                    <form class="needs-validation" novalidate>
+                                    <form th:object="${account}" method="post" >
                                         <div class="row">
                                             <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: -17px;">
                                                 <label for="validationCustom01"></label>
@@ -299,94 +299,98 @@ John Abraham</span>is now following you
                                                     Looks good!
                                                 </div>
                                             </div> -->
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="validationCustom02">Username</label>
-                                                <input type="text" class="form-control" id="validationCustom02" disabled="true" placeholder="Username" value="" required>
-                                                <div class="valid-feedback">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <!-- <label >Username</label> -->
+                                                <input type="hidden" class="form-control"  th:field="*{UserName}" readonly="readonly" placeholder="Username" >
+                                                <!-- <div class="valid-feedback">
                                                     Looks good!
-                                                </div>
+                                                </div> -->
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                                <label for="validationCustom02">Mật khẩu</label>
-                                                <input type="password" class="form-control" id="validationCustom02" disabled="true" placeholder="Mật khẩu" value="" required>
-                                                <div class="valid-feedback">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <!-- <label >Mật khẩu</label> -->
+                                                <input type="hidden" class="form-control" th:value="${displayedPassword}" readonly="readonly" placeholder="Mật khẩu" />
+                                                <!-- <div class="valid-feedback">
                                                     Looks good!
-                                                </div>
+                                                </div> -->
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                                <label for="validationCustom02">Tên đầy đủ</label>
-                                                <input type="text" class="form-control" id="validationCustom02" disabled="true" placeholder="Tên đầy đủ" value="" required>
-                                                <div class="valid-feedback">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "style="margin-top: 5px;">
+                                                <label >Tên đầy đủ</label>
+                                                <input type="text" class="form-control"   th:field="*{FullName}" readonly="readonly" placeholder="Tên đầy đủ" >
+                                                <!-- <div class="valid-feedback">
                                                     Looks good!
-                                                </div>
+                                                </div> -->
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 "  style="margin-top: 5px;">
-                                                <label for="validationCustom02">Hình ảnh</label>
-                                                <input type="file" class="form-control" id="validationCustom02" disabled="true" placeholder="Hình ảnh" value="" required>
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
+                                            <!-- <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "  style="margin-top: 5px;">
+                                                <label >Hình ảnh</label>
+                                                <input type="file" class="form-control"  th:field="*{Avatar}"  accept="Avatar/*"  th:value="${account.Avatar}" id="avatarInput" name="avatarFile">    -->
+                                                <!--    -->
+                                            <!-- </div> -->
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: 5px;">
+                                                <label>Hình ảnh</label>
+                                                <!-- Input type file không có thuộc tính th:field -->
+                                                <input type="file" class="form-control" accept="Avatar/*" id="avatarInput" name="avatarFile" 
+                                                    th:disabled="${not #strings.isEmpty(account.Avatar)}">
+                                                <!-- Giữ nguyên giá trị của trường Avatar -->
+                                                <input type="hidden" th:field="*{Avatar}" th:value="${account.Avatar}">
                                             </div>
+                                            
                                            
                                             
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                                <label for="validationCustom02">Số điện thoại</label>
-                                                <input type="text" class="form-control" id="validationCustom02" disabled="true" placeholder="Số điện thoại" value="" required>
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
+                                                <label >Số điện thoại</label>
+                                                <input type="text" class="form-control"  th:field="*{Phone}" readonly="readonly" placeholder="Số điện thoại"  >
+                                                
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                                <label for="validationCustom02">Email</label>
-                                                <input type="email" class="form-control" id="validationCustom02" disabled="true" placeholder="Email" value="" required>
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control"  th:field="*{Email}" readonly="readonly" placeholder="Email"  >
+                                               
                                             </div>
                                             
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                                <label for="validationCustom02">Trạng thái hoạt động</label><br>
-                                            <label class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" name="radio-inline1" checked="" class="custom-control-input"><span class="custom-control-label">Hoạt động</span>
-                                            </label>
-                                            <label class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" name="radio-inline1" class="custom-control-input"><span class="custom-control-label">Không hoạt động</span>
-                                            </label>
+                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
+                                            <label>Ngày sinh</label>
+                                            <input type="text" class="form-control" th:field="*{Birth}" readonly="readonly" placeholder="Ngày sinh"  >
+                                            
                                         </div>
-
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
-                                            <label for="validationCustom02">Ngày sinh</label>
-                                            <input type="date" class="form-control" id="validationCustom02" disabled="true" placeholder="Ngày sinh" value="" required>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
+                                                                                 
+                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
                                             <label for="validationCustom02">Giới tính</label><br>
                                         <label class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" name="radio-inline" checked="" disabled="true" class="custom-control-input"><span class="custom-control-label">Nam</span>
+                                            <input type="radio" name="radio-inline"  th:field="*{Gender}" th:value="true" readonly="readonly" class="custom-control-input"><span class="custom-control-label">Nam</span>
                                         </label>
                                         <label class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" name="radio-inline" disabled="true" class="custom-control-input"><span class="custom-control-label">Nữ</span>
+                                            <input type="radio" name="radio-inline" disabled="true" th:field="*{Gender}" th:value="false" readonly="readonly" class="custom-control-input"><span class="custom-control-label">Nữ</span>
                                         </label>
                                     </div>
+                                    
+                                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: 5px;">
+                                        <label>Trạng thái hoạt động</label><br>
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="radio-inline1" th:field="*{Active}"  th:value="true"  class="custom-control-input"><span class="custom-control-label">Hoạt động</span>
+                                    </label>
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" name="radio-inline1" th:field="*{Active}" th:value="false" class="custom-control-input"><span class="custom-control-label">Không hoạt động</span>
+                                    </label>
+                                </div>
 
                                         </div>    
                                            
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <div class="form-group">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                                        
-                                                        
+                                                        <!-- <input class="form-check-input" type="checkbox"> -->
+                                                                                                              
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-left: -15px;">  
-                                                <button class="btn btn-secondary" type="submit" style="width:90px;" id="updateButton">Sửa</button>    
-                                                <button class="btn btn-info" type="submit" style="width:90px;">Làm mới</button>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-left: -15px;"> 
+                                                <a href="/admin/account" class="btn btn-info" style="width:90px;">Làm mới
+                                                </a> 
+                                                <button class="btn btn-secondary" type="submit" id="editButton"  formaction="/admin/saveAccount" style="width:90px;">Sửa</button>    
+                                                
                                             </div>
+                                            <div th:if="${not #strings.isEmpty(successMessage)}" class="alert alert-success" style="width:27% ;margin-left:200px;margin-top:-43px;height: 45px;">
+                                                <p th:text="${successMessage}"></p>
                                         </div>
                                     </form>
                                 </div>
@@ -403,7 +407,7 @@ John Abraham</span>is now following you
 
 
             <!-- bang  -->
-            <div class="dashboard-wrapper" style="margin-top: -70px;">
+            <div class="dashboard-wrapper" style="margin-top: -300px;">
                 <div class="container-fluid  dashboard-content">
                     <!-- ============================================================== -->
                     <!-- pageheader -->
@@ -439,8 +443,7 @@ John Abraham</span>is now following you
                                         <table id="example" class="table table-striped table-bordered second" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Username</th>
-                                                    <th>Mật khẩu</th>
+                                                   
                                                     <th>Tên đầy đủ</th>                                        
                                                     <th>Hình ảnh</th>  
                                                     <th>Số điện thoại</th>  
@@ -453,42 +456,41 @@ John Abraham</span>is now following you
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr >
-                                                    <td>2015</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td ></td>
-                                                    <td></td>
-                                                    <td ></td>
+                                                <tr  th:each="account : ${allAccounts}">
+                                                   
+                                                    <td  th:text="${account.FullName}"></td>
+                                                    <!-- <td  th:text="${account.Avatar}"></td> -->
+                                                    <!-- <td>
+                                                        <img th:src="@{'{/admin/assets/images}' + ${account.Avatar}}" alt="Avatar" style="max-width: 50px; max-height: 50px;" />
+                                                        
+                                                    </td> -->
+                                                    <td>
+                                                        <img th:src="@{/assets/images/products/{Avatar}(Avatar=${account.Avatar})}"
+                                                        width="50px" style="border-radius: 10px;">
+                                                    </td>
 
-                                                    <td style="line-height: 40px;">
-                                                        <!-- <a href="./cards.html">
-                                                 <button class="btn btn-danger" type="submit" style="width:60px; max-width: 100%;  float: right;">   
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                                                  </svg>         
-                                                </button> 
-                                            </a> -->
-                                                 <a href="">
-                                                    <button class="btn btn-primary" type="submit" style="width:60px; max-width: 100%; float: right; margin-right: 7px;">
+                                                    <td  th:text="${account.Phone}"></td>
+                                                    <td  th:text="${account.Email}"></td>
+                                                    <td th:text="${account.Active ? 'Kích hoạt' : 'Không kích hoạt'}"></td>
+                                                    <!-- <td  th:text="${account.Birth}"></td> -->
+                                                    <td th:text="${#dates.format(account.Birth, 'dd/MM/yyyy')}"></td>
+                                                    <td th:text="${account.Gender ? 'Nam' : 'Nữ'}"></td>
+                                                    <td style="line-height: 40px;">                         
+                                                 <a th:href="@{/admin/editaccount/{Username}(Username=${account.UserName})}">
+                                                    <button class="btn btn-primary" style="width:60px; max-width: 100%; float: right; margin-right: 7px;">
                                                         <svg style=" vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
                                                           </svg>
                                                     </button>
                                                  </a>
-                                                </td>                                                                                          
+                                                  </td>                                                                                          
                                                  
                  
                                                 </tr>             
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Username</th>
-                                                    <th>Mật khẩu</th>
+                                                   
                                                     <th>Tên đầy đủ</th>                                        
                                                     <th>Hình ảnh</th>  
                                                     <th>Số điện thoại</th>  
@@ -535,20 +537,16 @@ John Abraham</span>is now following you
     <!-- end main wrapper -->
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
-    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="../assets/vendor/parsley/parsley.js"></script>
-    <script src="../assets/libs/js/main-js.js"></script>
+    <script th:src=@{/assets/vendor/jquery/jquery-3.3.1.min.js}></script>
+    <script th:src=@{/assets/vendor/bootstrap/js/bootstrap.bundle.js}></script>
+    <script th:src=@{/assets/vendor/slimscroll/jquery.slimscroll.js}></script>
+    <script th:src=@{/assets/vendor/parsley/parsley.js}></script>
+    <script th:src=@{/assets/libs/js/main-js.js}></script>
     <script>
-
     
-
-
-
-
     $('#form').parsley();
     </script>
+
     <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
@@ -571,6 +569,42 @@ John Abraham</span>is now following you
 
     // table   
 </script>
+ 
+<script th:inline="javascript">
+    $(document).ready(function() {
+        /* Kiểm tra trạng thái "edit" và disable/enable nút sửa */
+        var isEditing = /*[[${isEditing}]]*/ false; // Lấy giá trị từ model
+
+        // Nếu đang ở chế độ "edit", enable nút sửa; ngược lại, disable nút sửa
+        $("#editButton").prop("disabled", !isEditing);
+    });
+</script>
+
+<!-- Thêm vào trang HTML -->
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    // Lắng nghe sự kiện khi có sự thay đổi trên trường input file
+    document.getElementById('avatarInput').addEventListener('change', function() {
+        // Lấy ra tên file đã chọn
+        var fileName = this.files[0].name;
+
+        // Hiển thị tên file đã chọn
+        document.getElementById('selectedFileName').textContent = 'Đã chọn: ' + fileName;
+    });
+
+    // Đặt giá trị ban đầu cho tên file nếu có giá trị từ đối tượng Account
+    var initialFileName = /*[[${account.Avatar}]]*/ '';  // Sử dụng Thymeleaf để lấy giá trị từ Model
+    if (initialFileName) {
+        document.getElementById('selectedFileName').textContent = 'Đã chọn: ' + initialFileName;
+    }
+    /*]]>*/
+</script>
+
+
+
+
+
 <!-- <script>
     const editButtons = document.querySelectorAll('.edit-button');
     const updateButton = document.getElementById('updateButton');
@@ -607,21 +641,21 @@ John Abraham</span>is now following you
     </script> -->
 
     
-    <script src="../assets/vendor/multi-select/js/jquery.multi-select.js"></script>  
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="../assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
-    <script src="../assets/vendor/datatables/js/data-table.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
-    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+    <script th:src=@{/assets/vendor/multi-select/js/jquery.multi-select.js}></script>  
+    <script th:src=@{https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js}></script>
+    <script th:src=@{/assets/vendor/datatables/js/dataTables.bootstrap4.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js}></script>
+    <script th:src=@{/assets/vendor/datatables/js/buttons.bootstrap4.min.js}></script>
+    <script th:src=@{/assets/vendor/datatables/js/data-table.js}></script>
+    <script th:src=@{https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js}></script>
+    <script th:src=@{https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js}></script>
+    <script th:src=@{https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js}></script>
+    <script th:src=@{https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js}></script>
+    <script th:src=@{https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js}></script>
    <!-- // table   -->
 </body>
  

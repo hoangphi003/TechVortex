@@ -14,10 +14,10 @@ public class ProductDetail {
     @Autowired
     ProductDetailService productDetailService;
 
-    @GetMapping("/productdetail/{id}")
-    public String HomeProductDetail(Model model, @PathVariable("id") Integer id) {
-        model.addAttribute("detail", productDetailService.findById(id));
-        return "/product-detail";
-    }
+    // @GetMapping("/productdetail/{id}")
+    // public String HomeProductDetail(Model model, @PathVariable("id") Integer id) {
+    //     model.addAttribute("detail", productDetailService.findById(id));
+    //     return "/product-detail";
+    // }
 
 }
