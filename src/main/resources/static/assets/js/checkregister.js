@@ -85,7 +85,7 @@ function ValidateLogin(event) {
         }
     });
 
-    if (password.value.length < 7) {
+    if (password.value.length <= 6) {
         password.style.border = '1px solid red';
         passwordvalid.classList.remove('d-none');
         passwordvalid.innerText = "Mật khẩu trên 6 ký tự"

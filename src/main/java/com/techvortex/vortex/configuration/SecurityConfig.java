@@ -74,8 +74,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated().antMatchers("/admin/**")
                 .hasAnyRole("staff", "admin").anyRequest().permitAll();
 
-        // http.authorizeRequests().antMatchers("/purchase").authenticated().anyRequest().permitAll();
-
         http.formLogin().loginPage("/login").loginProcessingUrl("/UserLogin")
                 .defaultSuccessUrl("/login/success", false).failureUrl("/login/fail");
 

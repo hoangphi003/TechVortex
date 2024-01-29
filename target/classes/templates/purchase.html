@@ -118,9 +118,8 @@
 												tiếp</a>
 										</th:block>
 										<th:block th:if="${x.OrderStatus} == 'Vận chuyển'">
-											<a class="btn btn-outline-danger rounded-2 py-2 px-3"
-												th:href="@{|/cancelOrder/${x.OrderId}|}">Hủy
-												đơn</a>
+											<a class="btn btn-outline-secondary rounded-2 py-2 px-3"
+												href="/products">Mua tiếp</a>
 										</th:block>
 										<th:block th:if="${x.OrderStatus} == 'Đã hủy'">
 											<a class="btn btn-outline-secondary rounded-2 py-2 px-3"
