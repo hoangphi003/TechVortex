@@ -1,5 +1,8 @@
 package com.techvortex.vortex.accountmanager;
 
+import java.util.List;
+
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
@@ -9,12 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.techvortex.vortex.configuration.SecurityConfig;
 import com.techvortex.vortex.entity.Account;
+import com.techvortex.vortex.service.RegisterService;
 
 @Controller
 public class LoginController {
 
     @Autowired
     SecurityConfig config;
+
+    @Autowired
+    RegisterService registerService;
 
     @GetMapping("/login")
     public String HomeLogin(Account account) {
@@ -27,9 +34,30 @@ public class LoginController {
     }
 
     @GetMapping("/login/success")
-    public String SuccessLogin(OAuth2AuthenticationToken oauth2, Model model) {
-        config.LoginFormOAuth2(oauth2);
+    public String SuccessLogin(Model model) {
         model.addAttribute("messageSuccess", "bạn đã đăng nhập thành công");
+        return "login";
+    }
+
+    @GetMapping("/loginsocial/auth")
+    public String SuccessLoginSocial(OAuth2AuthenticationToken oauth2, Model model) {
+        String userName = oauth2.getPrincipal().getAttribute("name");
+        String email = oauth2.getPrincipal().getAttribute("email");
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        String password = RandomStringUtils.random(15, characters);
+
+        Account FindAccount = registerService.findByUserNameG(userName);
+
+        Account account = new Account();
+        if (FindAccount == null) {
+            account.setUserName(userName);
+            account.setEmail(email);
+            account.setPassword(password);
+            registerService.save(account);
+            model.addAttribute("messageSuccess", "Đăng ký thành công");
+        } else {
+            model.addAttribute("messageFail", "Tài khoản của bạn đã tồn tại");
+        }
         return "login";
     }
 

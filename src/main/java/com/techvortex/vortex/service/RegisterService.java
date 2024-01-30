@@ -12,4 +12,7 @@ public interface RegisterService {
 
     List<Account> CheckUserName(String username);
 
+    Account findByUserNameG(String userName);
+
+
  }

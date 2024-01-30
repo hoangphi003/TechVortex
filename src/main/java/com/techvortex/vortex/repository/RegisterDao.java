@@ -15,4 +15,8 @@ public interface RegisterDao extends JpaRepository<Account, String> {
 
     @Query("select a from Account a where a.UserName = :u")
     List<Account> CheckUserName(@Param("u") String UserName);
+
+    @Query("select a from Account a where a.UserName = :name")
+    Account findByUserNameG(@Param("name") String userName);
+
 }

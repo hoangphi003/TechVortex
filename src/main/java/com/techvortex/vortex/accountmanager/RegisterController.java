@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import com.techvortex.vortex.service.RegisterService;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RegisterController {

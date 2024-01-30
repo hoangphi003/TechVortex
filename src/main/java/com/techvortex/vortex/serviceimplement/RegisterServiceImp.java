@@ -34,7 +34,7 @@ public class RegisterServiceImp implements RegisterService {
         account.setActive(true);
         registerDao.save(account);
 
-       Role role = roleDao.findByRoleId("Customer");
+        Role role = roleDao.findByRoleId("Customer");
 
         if (role == null) {
             role = new Role();
@@ -58,4 +58,8 @@ public class RegisterServiceImp implements RegisterService {
         return registerDao.CheckUserName(username);
     }
 
+    @Override
+    public Account findByUserNameG(String userName) {
+        return registerDao.findByUserNameG(userName);
+    }
 }

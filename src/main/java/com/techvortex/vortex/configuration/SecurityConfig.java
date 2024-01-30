@@ -99,9 +99,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // OAuth2 - Đăng nhập từ mạng xã hội
         http.oauth2Login()
                 .loginPage("/login")
-                .defaultSuccessUrl("/login/success", false)
+                .defaultSuccessUrl("/loginsocial/auth", false)
                 .failureUrl("/login/fail")
                 .authorizationEndpoint().baseUri("/oauth2/authorization");
+
     };
 
     @Override
