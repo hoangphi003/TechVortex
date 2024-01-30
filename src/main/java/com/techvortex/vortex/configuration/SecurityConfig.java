@@ -61,19 +61,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     };
 
     // Login from Google account
-    public void LoginFormOAuth2(OAuth2AuthenticationToken oauth2) {
-        String fullname = oauth2.getPrincipal().getAttribute("name");
-        // String email = oauth2.getPrincipal().getAttribute("email");
-        // System.currentTimeMillis() mã hóa mật khẩu theo giờ hệ thống
-        String password = Long.toHexString(System.currentTimeMillis());
+    // public void LoginFormOAuth2(OAuth2AuthenticationToken oauth2) {
+    //     String fullname = oauth2.getPrincipal().getAttribute("name");
+    //     // String email = oauth2.getPrincipal().getAttribute("email");
+    //     // System.currentTimeMillis() mã hóa mật khẩu theo giờ hệ thống
+    //     String password = Long.toHexString(System.currentTimeMillis());
 
-        UserDetails user = User.withUsername(fullname)
-                .password(pe.encode(password))
-                .roles("User").build();
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user, null,
-                user.getAuthorities());
-        SecurityContextHolder.getContext().setAuthentication(auth);
-    }
+    //     UserDetails user = User.withUsername(fullname)
+    //             .password(pe.encode(password))
+    //             .roles("User").build();
+    //     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user, null,
+    //             user.getAuthorities());
+    //     SecurityContextHolder.getContext().setAuthentication(auth);
+    // }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

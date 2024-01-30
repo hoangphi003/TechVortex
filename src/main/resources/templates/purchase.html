@@ -130,6 +130,16 @@
 								</div>
 							</div>
 						</th:block>
+						<th:block th:if="${#lists.isEmpty(order)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/box.png" alt="" width="145px">
+								</div>
+								<div class="text-empty-box ">
+									<h5 class="">Bạn chưa có đơn hàng nào</h5>
+								</div>
+							</div>
+						</th:block>
 					</div>
 
 					<div class="tab-pane fade" id="dangcho" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -221,6 +231,16 @@
 												tiếp</a>
 										</th:block>
 									</div>
+								</div>
+							</div>
+						</th:block>
+						<th:block th:if="${#lists.isEmpty(orderWaiting)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/mobile.png" alt="" width="130px">
+								</div>
+								<div class="text-empty-box mt-3">
+									<h5 class="">Bạn chưa có đơn chờ thanh toán</h5>
 								</div>
 							</div>
 						</th:block>
@@ -317,6 +337,16 @@
 								</div>
 							</div>
 						</th:block>
+						<th:block th:if="${#lists.isEmpty(orderShipping)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/delivery-truck.png" alt="" width="145px">
+								</div>
+								<div class="text-empty-box ">
+									<h5 class="">Bạn chưa có đơn hàng vận chuyển</h5>
+								</div>
+							</div>
+						</th:block>
 					</div>
 					<div class="tab-pane fade " id="chogiaohang" role="tabpanel" aria-labelledby="nav-home-tab">
 						<th:block th:each="x: ${orderDelivery}">
@@ -407,6 +437,16 @@
 												tiếp</a>
 										</th:block>
 									</div>
+								</div>
+							</div>
+						</th:block>
+						<th:block th:if="${#lists.isEmpty(orderDelivery)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/courier.png" alt="" width="130px">
+								</div>
+								<div class="text-empty-box mt-3">
+									<h5 class="">Bạn chưa có đơn chờ giao hàng</h5>
 								</div>
 							</div>
 						</th:block>
@@ -503,6 +543,16 @@
 								</div>
 							</div>
 						</th:block>
+						<th:block th:if="${#lists.isEmpty(orderFinish)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/box_finish.png" alt="" width="130px">
+								</div>
+								<div class="text-empty-box mt-3">
+									<h5 class="">Bạn chưa có đơn hàng hoàn thành nào</h5>
+								</div>
+							</div>
+						</th:block>
 					</div>
 					<div class="tab-pane fade " id="dahuy" role="tabpanel" aria-labelledby="nav-home-tab">
 						<th:block th:each="x: ${orderCancel}">
@@ -593,6 +643,16 @@
 												tiếp</a>
 										</th:block>
 									</div>
+								</div>
+							</div>
+						</th:block>
+						<th:block th:if="${#lists.isEmpty(orderCancel)}">
+							<div class="bg-white text-center py-5">
+								<div class="empty-box">
+									<img src="/assets/images/status/cancelled.png" alt="" width="130px">
+								</div>
+								<div class="text-empty-box mt-3">
+									<h5 class="">Bạn chưa hủy đơn hàng nào</h5>
 								</div>
 							</div>
 						</th:block>

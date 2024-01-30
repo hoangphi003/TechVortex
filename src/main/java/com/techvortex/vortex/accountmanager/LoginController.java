@@ -2,6 +2,9 @@ package com.techvortex.vortex.accountmanager;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -23,6 +26,9 @@ public class LoginController {
     @Autowired
     RegisterService registerService;
 
+    @Autowired
+    HttpServletRequest request;
+
     @GetMapping("/login")
     public String HomeLogin(Account account) {
         return "login";
@@ -40,11 +46,14 @@ public class LoginController {
     }
 
     @GetMapping("/loginsocial/auth")
-    public String SuccessLoginSocial(OAuth2AuthenticationToken oauth2, Model model) {
-        String userName = oauth2.getPrincipal().getAttribute("name");
+    public String SuccessLoginSocial(OAuth2AuthenticationToken oauth2, Model model, HttpSession session) {
+        String userName = oauth2.getPrincipal().getName();
+        System.out.println(oauth2);
+        String fullName = oauth2.getPrincipal().getAttribute("name");
         String email = oauth2.getPrincipal().getAttribute("email");
+        String picture = oauth2.getPrincipal().getAttribute("picture");
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        String password = RandomStringUtils.random(15, characters);
+        String password = RandomStringUtils.random(8, characters);
 
         Account FindAccount = registerService.findByUserNameG(userName);
 
@@ -52,7 +61,9 @@ public class LoginController {
         if (FindAccount == null) {
             account.setUserName(userName);
             account.setEmail(email);
+            account.setFullName(fullName);
             account.setPassword(password);
+            account.setAvatar(picture);
             registerService.save(account);
         }
         return "redirect:/index";
@@ -60,7 +71,7 @@ public class LoginController {
 
     @GetMapping("/login/fail")
     public String FailLogin(Model model) {
-        model.addAttribute("messageFail", "kiểm tra lại tên đăng nhập và mật khẩu");
+        model.addAttribute("messageFail", "kiểm tra tên đăng nhập và mật khẩu của bạn");
         return "login";
     }
 
