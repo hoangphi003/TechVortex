@@ -45,17 +45,16 @@
                             </div>
                         </div>
                         <div th:if="${#request.remoteUser}">
-
                             <div class="dropdonwn">
                                 <a class="nav-link" href="#" data-bs-toggle="dropdown">
                                     <i class="fa-regular fa-user-circle text-black fs-4 "></i></a>
-
                                 <ul class="dropdown-menu acc">
                                     <li><a class="dropdown-item" href="profile">Tài khoản</a></li>
                                     <li><a class="dropdown-item" href="purchase">Đơn mua</a></li>
                                     <li><a class="dropdown-item forget-pass" href="/changepassword">Đổi mật
                                             khẩu</a></li>
-                                </ul>
+                                    <li><a class="dropdown-item" href="/user/logout">Đăng xuất</a></li>
+                                </ul>   
                             </div>
                         </div>
                         <li><a class="nav-link" href="cart">
@@ -129,7 +128,7 @@
                                 <a class="nav-link" href="#"><i class="fa-solid fa-bolt me-2"></i></i>Giảm giá</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa-regular fa-newspaper me-2"></i>Tin mới</a>
+                                <a class="nav-link" href="/blog"><i class="fa-regular fa-newspaper me-2"></i>Tin mới</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -137,11 +136,12 @@
                                     <i class="fa-solid fa-life-ring me-2"></i>Chăm sóc khách hàng
                                 </a>
                                 <ul class="dropdown-menu menu-dn2">
-                                    <li><a class="dropdown-item" href="#"><i
+                                    <li><a class="dropdown-item" href="/faqs"><i
                                                 class="fa-solid fa-circle-question me-2"></i>Hỏi đáp</a></li>
-                                    <li><a class="dropdown-item" href="#"><i
+                                    <li><a class="dropdown-item" href="/about"><i
                                                 class="fa-solid fa-circle-info me-2"></i>Giới thiệu</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-envelope me-2"></i>Liên
+                                    <li><a class="dropdown-item" href="/contact"><i
+                                                class="fa-solid fa-envelope me-2"></i>Liên
                                             hệ</a></li>
                                 </ul>
                             </li>

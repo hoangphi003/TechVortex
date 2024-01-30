@@ -54,11 +54,8 @@ public class LoginController {
             account.setEmail(email);
             account.setPassword(password);
             registerService.save(account);
-            model.addAttribute("messageSuccess", "Đăng ký thành công");
-        } else {
-            model.addAttribute("messageFail", "Tài khoản của bạn đã tồn tại");
         }
-        return "login";
+        return "redirect:/index";
     }
 
     @GetMapping("/login/fail")

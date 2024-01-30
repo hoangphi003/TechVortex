@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Contact {
-    @GetMapping("/lienhe")
+    @GetMapping("/contact")
     public String HomeContact() {
         return "contact";
     }
