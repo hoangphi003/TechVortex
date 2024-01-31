@@ -52,7 +52,7 @@ public class LoginController {
         String fullName = oauth2.getPrincipal().getAttribute("name");
         String email = oauth2.getPrincipal().getAttribute("email");
         String picture = oauth2.getPrincipal().getAttribute("picture");
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         String password = RandomStringUtils.random(8, characters);
 
         Account FindAccount = registerService.findByUserNameG(userName);

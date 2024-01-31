@@ -1,9 +1,12 @@
 package com.techvortex.vortex.usercontroller;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.techvortex.vortex.entity.Product;
 import com.techvortex.vortex.entity.ProductDetail;
 import com.techvortex.vortex.repository.ProductDetailDao;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Compare {
@@ -25,14 +29,44 @@ public class Compare {
     @Autowired
     HttpServletRequest request;
 
-    @GetMapping("/compare/{id}")
-    public String SaveCompare(@PathVariable("id") Integer id, Model model) {
+    List<ProductDetail> list = new ArrayList<>();
 
-        ProductDetail detail = detailDao.findById(id).get();
-        List<ProductDetail> ListCompare = new ArrayList<>();
-        ListCompare.add(detail);
-        
-        model.addAttribute("ProductCompare", ListCompare);
+    @GetMapping("/compare")
+    public String Compare(Model model) {
+        model.addAttribute("ProductCompare", list);
         return "compare";
     }
+
+    @GetMapping("/compare/{id}")
+    public String SaveCompare(@PathVariable("id") Integer id, Model model) {
+        ProductDetail detail = detailDao.findById(id).get();
+        for (ProductDetail x : list) {
+            if (x.getProductDetailId().equals(detail.getProductDetailId())) {
+                return "redirect:/compare";
+            }
+        }
+        if (list.size() < 3) {
+            list.add(detail);
+        }
+
+        model.addAttribute("ProductCompare", list);
+        return "compare";
+    }
+
+    @GetMapping("/remove/{id}")
+    public String RemoveById(@PathVariable("id") Integer id, Model model) {
+        ProductDetail detail = detailDao.findById(id).get();
+        try {
+            for (ProductDetail x : list) {
+                if (x.getProductDetailId().equals(detail.getProductDetailId())) {
+                    list.remove(x);
+                }
+            }
+        } catch (ConcurrentModificationException e) {
+            return "redirect:/compare";
+        }
+
+        return "redirect:/compare";
+    }
+
 }
