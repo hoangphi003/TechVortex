@@ -79,15 +79,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.cors().disable();
-        http.authorizeRequests().antMatchers("/admin/role").hasRole("admin").antMatchers("/admin/account")
-                .hasRole("admin").antMatchers("/admin/authority").hasRole("admin").antMatchers("/admin/**")
+        http.authorizeRequests().antMatchers("/admin/role").hasRole("Admin").antMatchers("/admin/account")
+                .hasRole("admin").antMatchers("/admin/authority").hasRole("Admin").antMatchers("/admin/**")
                 .authenticated().antMatchers("/purchase")
                 .authenticated().antMatchers("/checkout")
                 .authenticated().antMatchers("/changepassword")
                 .authenticated().antMatchers("/profile")
                 .authenticated().antMatchers("/favorite")
                 .authenticated().antMatchers("/admin/**")
-                .hasAnyRole("staff", "admin").anyRequest().permitAll();
+                .hasAnyRole("Staff", "Admin").anyRequest().permitAll();
 
         http.formLogin().loginPage("/login").loginProcessingUrl("/UserLogin")
                 .defaultSuccessUrl("/login/success", false).failureUrl("/login/fail");
