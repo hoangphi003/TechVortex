@@ -17,4 +17,10 @@ public class ProductDetailServiceImp implements ProductDetailService {
     public ProductDetail findById(Integer id) {
         return productDetailDao.findById(id).get();
     }
+    
+
+    @Override
+    public boolean existsById(Integer id) {
+        return productDetailDao.existsById(id);
+    }
 }

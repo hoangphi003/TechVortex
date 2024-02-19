@@ -6,4 +6,7 @@ public interface ProductDetailService {
 
     ProductDetail findById(Integer id);
 
+    boolean existsById(Integer id);
+
+    
 }

@@ -12,7 +12,9 @@ body {
   font-size: 14px;
   background-color: #eff2f1;
 }
-
+* {
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
@@ -28,7 +30,9 @@ a:hover {
 a.more {
   font-weight: 600;
 }
-
+.text-blue {
+  color: #0d6efd;
+}
 .position-fixed {
   background-color: #3b5d50 !important;
   z-index: 99;
@@ -113,13 +117,16 @@ a.more {
 }
 .menu-nd {
   padding-top: 77px;
+  width: 101%;
 }
 
 .search-content {
   margin-left: 20px;
 }
 .cart-number {
-  margin-top: -13px;
+  margin-top: -4px;
+  margin-left: -7px;
+  padding-top: 4.8px;
 }
 .hero {
   padding-top: 30px;
@@ -989,19 +996,15 @@ button.btn-private-new {
 .acc .forget-pass {
   cursor: pointer;
 }
+
 .wrapper-auth {
-  /* background-color: #3b5d50; */
-  background: #3b5d50; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3b5d50,
-    #4b976a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3b5d50,
-    #4b976a
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-image: linear-gradient(135deg, #72edf2 10%, #5151e5 100%); */
+  background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
+  /* background-image: linear-gradient(146deg, #8f7cfd -9.16%, #f6a179 100%); */
+}
+.height-account {
+  min-height: 100vh;
+  max-height: 150vh;
 }
 .text-red {
   color: red;
@@ -1011,17 +1014,6 @@ button.btn-private-new {
   border: 1px solid red;
 }
 
-#logo-login {
-  margin: 0 10rem 1rem 0;
-}
-.logo-mb {
-  margin-bottom: 5rem;
-}
-.symbol-logo {
-  font-size: 9rem;
-  top: 37%;
-  left: 23%;
-}
 #success-alert {
   margin-left: 4.5rem;
 }
@@ -1030,3 +1022,282 @@ a.svg-gg:active,
 a.svg-fb:active {
   background-color: #3b5d50 !important;
 }
+.carousel-desc img {
+  width: 4rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.removeProduct {
+  cursor: pointer;
+}
+/* Loading */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: 5% auto;
+  right: 0%;
+  left: 0%;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 50px;
+  height: 50px;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 50%;
+  border: 3px solid #fafafa;
+  border-top: 3px solid transparent;
+  top: 10rem;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.swal-button {
+  background-color: #3b5d50;
+}
+
+.swal-button:hover {
+  background-color: #3b5d50 !important;
+  opacity: 0.9;
+}
+.swal-button--cancel {
+  background-color: #ecf0f1;
+}
+
+.swal-button--cancel:hover {
+  background-color: rgba(207, 206, 207, 0.867) !important;
+}
+
+.removeProductAll {
+  cursor: pointer;
+}
+
+.cart-item {
+  margin-top: 1.452rem;
+}
+.end-20 {
+  right: 130px;
+  top: 40px;
+}
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #ecf0f1;
+  display: none;
+}
+.cart-color-hover {
+  background-color: #ecf0f1;
+  min-width: 24.8rem;
+}
+
+.cart-color-hover:active {
+  background-color: #ecf0f1;
+}
+.cart-color-hover a:hover {
+  background-color: #ecf0f1;
+}
+.triangle.cart-item.position-fixed {
+  background: none !important;
+}
+
+/* choose file css */
+.file-upload {
+  display: block;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+.file-upload .file-select {
+  display: block;
+  border: 2px solid #dce4ec;
+  color: #34495e;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+.file-upload .file-select .file-select-button {
+  background: #dce4ec;
+  padding: 0 10px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.file-upload .file-select .file-select-name {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 10px;
+}
+.file-upload .file-select:hover {
+  border-color: #34495e;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.file-upload .file-select:hover .file-select-button {
+  background: #34495e;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.file-upload.active .file-select {
+  border-color: #3fa46a;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.file-upload.active .file-select .file-select-button {
+  background: #3fa46a;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.file-upload .file-select input[type="file"] {
+  z-index: 100;
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.file-upload .file-select.file-select-disabled {
+  opacity: 0.65;
+}
+.file-upload .file-select.file-select-disabled:hover {
+  cursor: default;
+  display: block;
+  border: 2px solid #dce4ec;
+  color: #34495e;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 5px;
+  text-align: left;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+.file-upload .file-select.file-select-disabled:hover .file-select-button {
+  background: #dce4ec;
+  color: #666666;
+  padding: 0 10px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.file-upload .file-select.file-select-disabled:hover .file-select-name {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 10px;
+}
+/* End choose file css */

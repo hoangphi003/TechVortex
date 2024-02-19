@@ -309,30 +309,7 @@ input:focus::-moz-placeholder {
   color: #fff;
   background: #ff3500;
 }
-.btn {
-  background: #ff2020;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 17px 28px;
-  border-radius: 0px;
-  display: inline-block;
-  line-height: 0;
-  cursor: pointer;
-  margin-bottom: 0;
-  margin: 10px;
-  cursor: pointer;
-  transition: color 0.4s linear;
-  position: relative;
-  z-index: 1;
-  -moz-user-select: none;
-  border: 0;
-  overflow: hidden;
-  margin: 0;
-  border-top-right-radius: 30px;
-}
+
 .btn::before {
   content: "";
   position: absolute;

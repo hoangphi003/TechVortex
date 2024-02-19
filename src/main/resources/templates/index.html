@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" ng-app="TechVortex">
 
 <head th:replace="~{/component/head.html::head-user}"></head>
 
-<body>
+<body ng-controller="homeController">
 	<!-- Start Header/Navigation -->
 	<header th:replace="~{/component/header.html::navbar-user}"></header>
 	<!-- End Header/Navigation -->
@@ -17,7 +17,7 @@
 							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
 								class="active" aria-current="true" aria-label="Slide 1"></button>
 							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-								aria-label="Slide 2"></button>
+							aria-label="Slide 2"></button>
 						</div>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
@@ -39,7 +39,6 @@
 						</button>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -728,7 +727,9 @@
 	<script src="/assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/angular.min.js"></script>
 	<script src="/assets/js/chatbox.js"></script>
+	<script src="/assets/js/index.js"></script>
 </body>
 
 </html>

@@ -15,9 +15,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.techvortex.vortex.entity.Cart;
 import com.techvortex.vortex.entity.Product;
 import com.techvortex.vortex.entity.ProductDetail;
 import com.techvortex.vortex.repository.ProductDetailDao;
+import com.techvortex.vortex.service.CartService;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -29,11 +32,19 @@ public class Compare {
     @Autowired
     HttpServletRequest request;
 
+    @Autowired
+    CartService cartService;
+
     List<ProductDetail> list = new ArrayList<>();
 
     @GetMapping("/compare")
     public String Compare(Model model) {
+        String userName = request.getRemoteUser();
+        List<Cart> listCart = cartService.findAllCart(userName);
+
         model.addAttribute("ProductCompare", list);
+        model.addAttribute("findAll", listCart);
+        model.addAttribute("quantity", cartService.displayqty(userName));
         return "compare";
     }
 

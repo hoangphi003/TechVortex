@@ -34,6 +34,62 @@
 							href="#dahuy" role="tab" aria-controls="nav-profile" aria-selected="false">Đã hủy</a>
 					</div>
 				</nav>
+				<!-- Modal review -->
+				<div class="modal fade" id="review" tabindex="-1">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Đánh giá sản phẩm</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="carder ">
+									<div class="row">
+										<div class="col-2">
+											<img src="assets/images/products/1.png" alt="" class="w-100">
+										</div>
+										<div class="col-10">
+											<h6 class="text-black ">Đồng hồ Lorem ipsum dolor sit amet consectetur
+												adipisicing elit. Iste,
+												laboriosam!</h6>
+											<span>Phân loại đồng hồ: Loại thể thao</span>
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-4 my-auto">
+											<h6 class="text-secondary mb-0">Chất lượng sản phẩm</h6>
+										</div>
+										<div class="col-6 rating-star fs-4">
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fa fa-star checked"></span>
+											<span class="fs-5 ps-2">tuyệt vời</span>
+										</div>
+									</div>
+									<div class="content">
+										<div class="my-4">
+											<textarea class="form-control" name="" id="" rows="3"
+												style="min-height: 200px;"
+												placeholder="Hãy chia sẻ những điều bạn thích về sản phẩm này với những người khác"></textarea>
+										</div>
+										<div class="file-upload mb-3">
+											<div class="file-select">
+												<div class="file-select-button" id="fileName">Chọn hình ảnh</div>
+												<div class="file-select-name" id="noFile">Chưa có ảnh...</div>
+												<input type="file" name="chooseFile" id="chooseFile">
+											</div>
+										</div>
+										<a class="btn btn-primary float-end p-2 rounded-2">Hoàn thành</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End modal review -->
 
 				<div class="tab-content mt-3 rounded-1">
 					<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -113,7 +169,10 @@
 												hàng</a>
 										</th:block>
 										<th:block th:if="${x.OrderStatus} == 'Hoàn thành'">
-											<a class="btn btn-outline-secondary rounded-2 py-2 px-3"
+											<a class="btn btn-outline-primary rounded-2 py-2 px-3 border-1 me-2"
+												data-bs-toggle="modal" data-bs-target="#review">Đánh
+												giá</a>
+											<a class="btn btn-outline-secondary rounded-2 py-2 px-3 "
 												href="/products">Mua
 												tiếp</a>
 										</th:block>
@@ -141,7 +200,6 @@
 							</div>
 						</th:block>
 					</div>
-
 					<div class="tab-pane fade" id="dangcho" role="tabpanel" aria-labelledby="nav-home-tab">
 						<th:block th:each="x: ${orderWaiting}">
 							<div class="mb-3 pt-4 bg-white" th:each="orderDetail : ${x.orderDetails}">
@@ -181,7 +239,6 @@
 										<span class="fs-6 text-secondary" th:if="${x.OrderStatus} == 'Vận chuyển'">
 											[(${x.OrderStatus})]</span>
 									</div>
-
 									<div class="col-6 text-end">
 										<span class="fs-6 fw-bold">Thành tiền:
 											<span class="fs-5 fw-bold text-danger pe-3 ps-1">
@@ -525,6 +582,9 @@
 												hàng</a>
 										</th:block>
 										<th:block th:if="${x.OrderStatus} == 'Hoàn thành'">
+											<a class="btn btn-outline-primary rounded-2 py-2 px-3 border-1 me-2"
+												href="">Đánh
+												giá</a>
 											<a class="btn btn-outline-secondary rounded-2 py-2 px-3"
 												href="/products">Mua
 												tiếp</a>
@@ -670,7 +730,8 @@
 	<!-- End Footer Section -->
 	<script src="/assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/index.js"></script>
 	<script src="/assets/js/chatbox.js"></script>
 
 </body>

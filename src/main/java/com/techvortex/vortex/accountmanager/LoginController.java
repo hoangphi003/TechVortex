@@ -42,13 +42,12 @@ public class LoginController {
     @GetMapping("/login/success")
     public String SuccessLogin(Model model) {
         model.addAttribute("messageSuccess", "bạn đã đăng nhập thành công");
-        return "login";
+        return "redirect:/index";
     }
 
     @GetMapping("/loginsocial/auth")
     public String SuccessLoginSocial(OAuth2AuthenticationToken oauth2, Model model, HttpSession session) {
         String userName = oauth2.getPrincipal().getName();
-        System.out.println(oauth2);
         String fullName = oauth2.getPrincipal().getAttribute("name");
         String email = oauth2.getPrincipal().getAttribute("email");
         String picture = oauth2.getPrincipal().getAttribute("picture");
