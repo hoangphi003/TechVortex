@@ -15,20 +15,9 @@ public interface AccountService {
 
 	public Account create(Account account); // thêm danh sách
 
-	public Account update(Account account); // sửa danh sách
 
 	public void delete(Account account);
-
-	// Account findByGmail(String gmail);
 	
-	// Page<Account> search(String Fullname, Pageable pageable);
+	void updateStatus(String UserName, Boolean Active);
 	
-	// Account findByPhone(Integer Phone);
-	// Account findByEmail(String email);
-
-	// Account getUsernameAndPassword(String username, String password);
-
-	// void deleteReferencingRecords(String id);
-
-	// void deleteReferenceOrders(String id);
 }

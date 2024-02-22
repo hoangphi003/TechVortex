@@ -1,6 +1,7 @@
 package com.techvortex.vortex.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.annotations.Nationalized;
@@ -13,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import lombok.Data;
 
 @Data
@@ -32,6 +36,9 @@ public class Order implements Serializable {
 
     @Nationalized
     private String OrderStatus;
+
+    @Temporal(TemporalType.DATE)
+    private Date OrderDate = new Date();
 
     @OneToMany(mappedBy = "order")
     List<OrderDiscount> orderDiscounts;

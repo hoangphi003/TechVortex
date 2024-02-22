@@ -4,8 +4,9 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.techvortex.vortex.entity.Account;
+import com.techvortex.vortex.entity.OrderDetail;
+
 @Repository
-public interface AccountDao extends JpaRepository<Account,String> {
+public interface OrderDetailDAO extends JpaRepository<OrderDetail,Integer> {
      
 }

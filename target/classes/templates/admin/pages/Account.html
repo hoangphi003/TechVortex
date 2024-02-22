@@ -14,7 +14,8 @@
     <link rel="stylesheet" th:href=@{/assets/vendor/fonts/fontawesome/css/fontawesome-all.css}>
 
     <!-- table -->
-  
+    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}">
+
     <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/dataTables.bootstrap4.css}>
     <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/buttons.bootstrap4.css}>
     <link rel="stylesheet" type="text/css" th:href=@{/assets/vendor/datatables/css/select.bootstrap4.css}>
@@ -286,12 +287,12 @@ John Abraham</span>is now following you
                         <!-- ============================================================== -->
                         <!-- validation form -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: -12px;">
+                        <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: -12px;">
                             <div class="card">
                                 <h5 class="card-header">Tài khoản</h5>
                                 <div class="card-body">
                                     <form th:object="${account}" method="post" >
-                                        <div class="row">
+                                        <div class="row"> -->
                                             <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-top: -17px;">
                                                 <label for="validationCustom01"></label>
                                                 <input type="hidden" class="form-control" id="validationCustom01" placeholder="First name" value="" required>
@@ -299,39 +300,39 @@ John Abraham</span>is now following you
                                                     Looks good!
                                                 </div>
                                             </div> -->
-                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                            <!-- <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "> -->
                                                 <!-- <label >Username</label> -->
-                                                <input type="hidden" class="form-control"  th:field="*{UserName}" readonly="readonly" placeholder="Username" >
+                                                <!-- <input type="hidden" class="form-control"  th:field="*{UserName}" readonly="readonly" placeholder="Username" > -->
                                                 <!-- <div class="valid-feedback">
                                                     Looks good!
                                                 </div> -->
-                                            </div>
-                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                            <!-- </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "> -->
                                                 <!-- <label >Mật khẩu</label> -->
-                                                <input type="hidden" class="form-control" th:value="${displayedPassword}" readonly="readonly" placeholder="Mật khẩu" />
+                                                <!-- <input type="hidden" class="form-control" th:value="${displayedPassword}" readonly="readonly" placeholder="Mật khẩu" /> -->
                                                 <!-- <div class="valid-feedback">
                                                     Looks good!
                                                 </div> -->
-                                            </div>
+                                            <!-- </div>
                                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "style="margin-top: 5px;">
                                                 <label >Tên đầy đủ</label>
-                                                <input type="text" class="form-control"   th:field="*{FullName}" readonly="readonly" placeholder="Tên đầy đủ" >
+                                                <input type="text" class="form-control"   th:field="*{FullName}" readonly="readonly" placeholder="Tên đầy đủ" > -->
                                                 <!-- <div class="valid-feedback">
                                                     Looks good!
                                                 </div> -->
-                                            </div>
+                                            <!-- </div> -->
                                             <!-- <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 "  style="margin-top: 5px;">
                                                 <label >Hình ảnh</label>
                                                 <input type="file" class="form-control"  th:field="*{Avatar}"  accept="Avatar/*"  th:value="${account.Avatar}" id="avatarInput" name="avatarFile">    -->
                                                 <!--    -->
                                             <!-- </div> -->
-                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: 5px;">
-                                                <label>Hình ảnh</label>
+                                            <!-- <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: 5px;">
+                                                <label>Hình ảnh</label> -->
                                                 <!-- Input type file không có thuộc tính th:field -->
-                                                <input type="file" class="form-control" accept="Avatar/*" id="avatarInput" name="avatarFile" 
-                                                    th:disabled="${not #strings.isEmpty(account.Avatar)}">
+                                                <!-- <input type="file" class="form-control" accept="Avatar/*" id="avatarInput" name="avatarFile" 
+                                                    th:disabled="${not #strings.isEmpty(account.Avatar)}"> -->
                                                 <!-- Giữ nguyên giá trị của trường Avatar -->
-                                                <input type="hidden" th:field="*{Avatar}" th:value="${account.Avatar}">
+                                                <!-- <input type="hidden" th:field="*{Avatar}" th:value="${account.Avatar}">
                                             </div>
                                             
                                            
@@ -380,7 +381,7 @@ John Abraham</span>is now following you
                                                     <div class="form-check">
                                                         <!-- <input class="form-check-input" type="checkbox"> -->
                                                                                                               
-                                                    </div>
+                                                    <!-- </div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 " style="margin-left: -15px;"> 
@@ -392,13 +393,14 @@ John Abraham</span>is now following you
                                             <div th:if="${not #strings.isEmpty(successMessage)}" class="alert alert-success" style="width:27% ;margin-left:200px;margin-top:-43px;height: 45px;">
                                                 <p th:text="${successMessage}"></p>
                                         </div>
-                                    </form>
-                                </div>
+                                    </form> -->
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div>  -->
                         <!-- ============================================================== -->
                         <!-- end validation form -->
                         <!-- ============================================================== -->
+                  
                     </div>                  
                 </div>                   
           </div>
@@ -433,7 +435,7 @@ John Abraham</span>is now following you
                         <!-- ============================================================== -->
                         <!-- data table  -->
                         <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: -35px;">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: -480px;">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="mb-0">Dữ liệu bảng tài khoản</h5>                                  
@@ -451,7 +453,7 @@ John Abraham</span>is now following you
                                                     <th>Trạng thái</th>
                                                     <th>Ngày sinh</th>
                                                     <th>Giới tính</th>
-                                                    <th>Edit</th>
+                                                    <th>Thay đổi trạng thái</th>
                                                                                                         
                                                 </tr>
                                             </thead>
@@ -471,21 +473,24 @@ John Abraham</span>is now following you
 
                                                     <td  th:text="${account.Phone}"></td>
                                                     <td  th:text="${account.Email}"></td>
-                                                    <td th:text="${account.Active ? 'Kích hoạt' : 'Không kích hoạt'}"></td>
+                                                    <!-- <td th:text="${account.Active ? 'Kích hoạt' : 'Không kích hoạt'}"></td> -->
+                                                    <td th:text="${account.Active ? 'Hoạt động' : 'Không hoạt động'}" 
+                                                   th:style="${account.Active ? 'color: green;' : 'color: red;'}">
+                                                        </td>
+
                                                     <!-- <td  th:text="${account.Birth}"></td> -->
                                                     <td th:text="${#dates.format(account.Birth, 'dd/MM/yyyy')}"></td>
                                                     <td th:text="${account.Gender ? 'Nam' : 'Nữ'}"></td>
-                                                    <td style="line-height: 40px;">                         
-                                                 <a th:href="@{/admin/editaccount/{Username}(Username=${account.UserName})}">
-                                                    <button class="btn btn-primary" style="width:60px; max-width: 100%; float: right; margin-right: 7px;">
+                                                    <td style="line-height: 40px; ">                         
+                                                  <a th:href="@{/admin/editaccount/{Username}(Username=${account.UserName})}">
+                                                    <button class="btn btn-primary" style="width:60px; max-width: 100%; margin-left: 50px;">
                                                         <svg style=" vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
                                                           </svg>
                                                     </button>
-                                                 </a>
+                                              
                                                   </td>                                                                                          
                                                  
-                 
                                                 </tr>             
                                             </tbody>
                                             <tfoot>
@@ -498,7 +503,7 @@ John Abraham</span>is now following you
                                                     <th>Trạng thái</th>
                                                     <th>Ngày sinh</th>
                                                     <th>Giới tính</th>
-                                                    <th>Edit</th>                                          
+                                                    <th>Thay đổi trạng thái</th>                                         
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -601,46 +606,64 @@ John Abraham</span>is now following you
     /*]]>*/
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Đảm bảo bạn đã bao gồm thư viện jQuery trong trang của bạn -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<script th:inline="javascript">
+    function confirmAndUpdateStatus(selectElement) {
+    var status = selectElement.value === 'true'; // Chuyển giá trị từ chuỗi sang boolean
+    var username = $('#updateStatusForm select').data('username');
 
+    Swal.fire({
+        title: 'Bạn có chắc chắn muốn thay đổi trạng thái tài khoản?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Đồng ý',
+        cancelButtonText: 'Hủy'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            updateStatus(username, !status); // Đảo ngược trạng thái mới
+        } else {
+            // Không thực hiện cập nhật trạng thái
+            // Bạn có thể thực hiện các hành động khác nếu cần
+        }
+    });
+}
 
-
-<!-- <script>
-    const editButtons = document.querySelectorAll('.edit-button');
-    const updateButton = document.getElementById('updateButton');
-    const submitButton = document.getElementById('submitButton');
-
-    // Lấy tham số từ URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const showUpdate = urlParams.get("showUpdate");
-
-    // Kiểm tra giá trị tham số và hiển thị nút "Update" nếu cần thiết
-    if (showUpdate === "true") {
-        // Hiển thị nút "Update" và ẩn nút "Submit"
-        updateButton.classList.remove('d-none');
-        submitButton.classList.add('d-none');
-    } else {
-        // Ẩn nút "Update" và hiển thị nút "Submit" mặc định
-        updateButton.classList.add('d-none');
-        submitButton.classList.remove('d-none');
-    }
-
-    editButtons.forEach((button) => {
-        button.addEventListener('click', function () {
-            // Ẩn nút "Submit" và hiển thị nút "Update"
-            submitButton.classList.add('d-none');
-            updateButton.classList.remove('d-none');
+    function updateStatus() {
+        // Code AJAX giống như trước
+        // Gửi yêu cầu đổi trạng thái tài khoản
+        $.ajax({
+            type: 'POST',
+            url: '/updatestatus/' +  account.Username ,
+            data: {
+                isActive:  isActive ,
+            },
+            success: function (response) {
+                // Xử lý kết quả từ server nếu cần
+                // Nếu server trả về thành công, bạn có thể cập nhật dữ liệu trên giao diện
+                Swal.fire({
+                    title: 'Cập nhật trạng thái thành công!',
+                    icon: 'success',
+                });
+            },
+            error: function (error) {
+                console.log('Error:', error);
+                // Xử lý lỗi nếu có
+            }
         });
-    });
+    }
+</script>
 
-    updateButton.addEventListener('click', function (event) {
-        // Ẩn nút "Update" và hiển thị nút "Submit"
-        updateButton.classList.add('d-none');
-        submitButton.classList.remove('d-none');
-    });
-    </script> -->
 
-    
+
+
+
+
+
     <script th:src=@{/assets/vendor/multi-select/js/jquery.multi-select.js}></script>  
     <script th:src=@{https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js}></script>
     <script th:src=@{/assets/vendor/datatables/js/dataTables.bootstrap4.min.js}></script>

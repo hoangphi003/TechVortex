@@ -28,11 +28,6 @@ public class AccountImpl implements AccountService {
         return accountDAO.save(account);
     }
 
-    @Override
-    public Account update(Account account) {
-        // TODO Auto-generated method stub
-        return accountDAO.save(account);
-    }
 
     @Override
     public void delete(Account account) {
@@ -41,11 +36,35 @@ public class AccountImpl implements AccountService {
     }
 
     @Override
-	@Transactional
-	public Account findById(String username) {
-		return accountDAO.findById(username).get();
-	}
+    @Transactional
+    public Account findById(String UserName) {
+        Optional<Account> optionalAccount = accountDAO.findById(UserName);
+        return optionalAccount.orElse(null);
+    }
+
+    @Override
+@Transactional
+public void updateStatus(String UserName, Boolean Active) {
+    try {
+        Account account = findById(UserName);
+        if (account != null) {
+            account.setActive(Active);
+            // Đảm bảo sử dụng save để cập nhật đối tượng
+            accountDAO.save(account);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 
 
-   
+    
+
+
+
+    
+    
+
+
+ 
 }
