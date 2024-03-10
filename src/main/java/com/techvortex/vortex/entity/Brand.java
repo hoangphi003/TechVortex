@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
 import lombok.Data;
 
 @Data
@@ -22,6 +24,7 @@ public class Brand implements Serializable{
     private Integer BrandId;
 
     @Nationalized
+    @NotBlank
     private String BrandName;
 
     private String BrandImage;

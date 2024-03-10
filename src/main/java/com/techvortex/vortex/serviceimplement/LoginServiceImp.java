@@ -19,4 +19,9 @@ public class LoginServiceImp implements LoginService {
         return loginDao.findById(UserName).get();
     }
 
+    @Override
+    public Account findbyemail(String email) {
+        return loginDao.isFindUserNameByIdEmail(email);
+    }
+
 }

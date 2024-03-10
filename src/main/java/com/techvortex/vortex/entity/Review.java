@@ -42,7 +42,8 @@ public class Review {
     Product product;
 
     @Temporal(TemporalType.DATE)
-    private Date ReviewDate = new Date();
+    private Date ReviewDate;
+    // private Date ReviewDate = new Date();
 
     @OneToMany(mappedBy = "review")
     List<ReviewImg> reviewImgs;
