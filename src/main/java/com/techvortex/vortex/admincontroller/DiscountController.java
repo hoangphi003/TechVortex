@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +39,7 @@ public class DiscountController {
 
     // field du lieu len table
     @GetMapping("/discount")
-    public String showDiscountList(Model model) {
+    public String showDiscountList(@ModelAttribute("discount") Discount discount,BindingResult bindingResult, Model model) {
         model.addAttribute("alldiscount", discountService.findAll());
         model.addAttribute("discount", new Discount());
         return "/admin/pages/Discount";
@@ -46,18 +47,24 @@ public class DiscountController {
 
     // chuc nang insert
     @PostMapping("/savediscount")
-    public String createDiscount(@ModelAttribute @Valid Discount discount, BindingResult bindingResult,
-            Model model, RedirectAttributes redirectAttributes) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("discount", discount);
-            model.addAttribute("errorMessage", "Lưu thất bại!");
-            model.addAttribute("alldiscount", discountService.findAll());
-            return "/admin/pages/Discount";
-        }
-        discountService.create(discount);
-        redirectAttributes.addFlashAttribute("successMessage", "Lưu giảm giá thành công!");
-        return "redirect:/admin/discount";
+public String createDiscount(@Validated @ModelAttribute("discount") Discount discount, BindingResult bindingResult,
+        Model model, RedirectAttributes redirectAttributes) {
+    // Kiểm tra xem ngày bắt đầu có nhỏ hơn ngày kết thúc không
+    if (discount.getStartDay() != null && discount.getEndDay() != null && discount.getStartDay().after(discount.getEndDay())) {
+        bindingResult.addError(new FieldError("discount", "StartDay", "Ngày bắt đầu phải nhỏ hơn ngày kết thúc"));
     }
+
+    if (bindingResult.hasErrors()) {
+        // Nếu có lỗi, trả về trang Discount với thông báo lỗi
+        model.addAttribute("alldiscount", discountService.findAll());
+        return "/admin/pages/Discount";
+    }
+
+    // Nếu không có lỗi, thực hiện lưu giảm giá và chuyển hướng đến trang danh sách giảm giá
+    discountService.create(discount);
+    redirectAttributes.addFlashAttribute("successMessage", "Lưu giảm giá thành công!");
+    return "redirect:/admin/discount";
+}
 
     @GetMapping("discount/edit/{discountId}")
     public String showUpdateForm(@PathVariable("discountId") Integer discountId, Model model) {

@@ -344,18 +344,21 @@
                                             <label for="DiscountName">Tên giảm giá</label>
                                             <input type="text" class="form-control" id="discountName"
                                                 placeholder="Tên giảm giá" th:field="*{discountName}">
+                                                <i th:errors="*{DiscountName}" style="color: #e5193b;"></i>
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 "
                                             style="margin-top: 5px;">
                                             <label for="Percents">Phần trăm giảm giá</label>
                                             <input type="number" class="form-control" id="discountPercents"
                                                 placeholder="% giảm giá" th:field="*{percents}">
+                                                <i th:errors="*{Percents}" style="color: #e5193b;"></i>
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
                                             style="margin-top: 5px;">
                                             <label for="StartDay">Ngày bắt đầu</label>
                                             <input type="date" class="form-control" id="discountStartday"
                                                 placeholder="20/02/2024" th:field="*{startDay}">
+                                                <i th:errors="*{StartDay}" style="color: #e5193b;"></i>
                                         </div>
 
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
@@ -363,12 +366,14 @@
                                             <label for="EndDay">Ngày kết thúc</label>
                                             <input type="date" class="form-control" id="discountEndday"
                                                 placeholder="20/03/2024" th:field="*{endDay}">
+                                                <i th:errors="*{EndDay}" style="color: #e5193b;"></i>
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 "
                                             style="margin-top: 5px;">
                                             <label for="Quantity">Số lượng</label>
                                             <input type="number" class="form-control" id="discountQuantity"
                                                 placeholder="Số lượng" th:field="*{quantity}">
+                                                <i th:errors="*{Quantity}" style="color: #e5193b;"></i>
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 "
                                             style="margin-top: 5px;">
@@ -376,6 +381,7 @@
                                             <textarea class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 "
                                                 id="discountDescription" name="w3review" rows="5" cols="50"
                                                 th:field="*{description}">
+                                                <i th:errors="*{Description}" style="color: #e5193b;"></i>
                                                     </textarea>
                                         </div>
                                     </div>
@@ -532,29 +538,7 @@
 
         $('#form').parsley();
     </script>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-
-        // table   
-    </script>
+ 
     <script>
         const resetForm = () => {
             document.getElementById('discountName').value = '';
@@ -577,7 +561,7 @@
         timer: 1500,
     });
 </script>
-<script th:if="${not #strings.isEmpty(errorMessage)}"> // thông báo lưu thành công
+<!-- <script th:if="${not #strings.isEmpty(errorMessage)}"> // thông báo lưu thành công
     var successMessage = 'Không bỏ trống dữ liệu vui lòng nhập hoặc chọn dữ liệu';
     Swal.fire({
         icon: 'error',
@@ -586,8 +570,8 @@
         showConfirmButton: false,
         timer: 1500,
     });
-</script>
-<script th:if="${not #strings.isEmpty(errorMessagee)}"> // thông báo lưu thành công
+</script> -->
+<!-- <script th:if="${not #strings.isEmpty(errorMessagee)}"> // thông báo lưu thành công
     var successMessage = 'Không bỏ trống hình ảnh';
     Swal.fire({
         icon: 'error',
@@ -596,7 +580,7 @@
         showConfirmButton: false,
         timer: 1500,
     });
-</script>
+</script> -->
 
 <script>
 
@@ -630,7 +614,7 @@
     });
 </script>
 
-<script th:if="${not #strings.isEmpty(deleteerrorMessage)}"> // thông báo xóa thất bại
+<!-- <script th:if="${not #strings.isEmpty(deleteerrorMessage)}"> // thông báo xóa thất bại
     var errorMessage = 'Xóa sản phẩm thất bại';
     Swal.fire({
         icon: 'error',
@@ -639,7 +623,7 @@
         showConfirmButton: false,
         timer: 1500,
     });
-</script>
+</script> -->
 
 <script src="../../../../../assets/vendor/multi-select/js/jquery.multi-select.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

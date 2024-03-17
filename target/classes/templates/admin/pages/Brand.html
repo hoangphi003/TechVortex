@@ -557,7 +557,7 @@
         });
     </script>
     <script th:if="${not #strings.isEmpty(errorMessage)}"> // thông báo lưu thành công
-        var successMessage = 'Khong bo trong thuong hieu';
+        var successMessage = 'Không bỏ trống tên thương hiệu';
         Swal.fire({
             icon: 'error',
             title: 'Thất bại!',
@@ -567,7 +567,7 @@
         });
     </script>
     <script th:if="${not #strings.isEmpty(errorMessagee)}"> // thông báo lưu thành công
-        var successMessage = 'Khong bo trong anh';
+        var successMessage = 'Không chọn ảnh';
         Swal.fire({
             icon: 'error',
             title: 'Thất bại!',
